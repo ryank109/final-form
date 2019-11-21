@@ -12,7 +12,6 @@
   "scripts": {
     "start": "nps",
     "test": "nps test",
-    "precommit": "lint-staged && npm start validate",
     "prepare": "lint-staged && npm start validate",
     "postinstall": "node -e \"console.log('\\u001b[35m\\u001b[1mUsing final-form at work? You can now donate to our open collective:\\u001b[22m\\u001b[39m\\n > \\u001b[34mhttps://opencollective.com/final-form/donate\\u001b[0m')\""
   },
@@ -88,18 +87,23 @@
   "bundlesize": [
     {
       "path": "dist/final-form.umd.min.js",
-      "maxSize": "5.1kB"
+      "maxSize": "5.2kB"
     },
     {
       "path": "dist/final-form.es.js",
-      "maxSize": "8.7kB"
+      "maxSize": "9.02kB"
     },
     {
       "path": "dist/final-form.cjs.js",
-      "maxSize": "8.9kB"
+      "maxSize": "9.15kB"
     }
   ],
   "dependencies": {
     "@babel/runtime": "^7.3.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged && npm start validate"
+    }
   }
 }
